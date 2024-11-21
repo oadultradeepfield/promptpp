@@ -312,7 +312,9 @@ export default function DynamicPromptPage() {
   const category = params.category as string;
   const pageConfig = pageConfigs[category];
 
-  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [formData, setFormData] = useState<
+    Record<string, string | number | undefined>
+  >({});
   const [generatedPrompt, setGeneratedPrompt] = useState("");
   const [copied, setCopied] = useState(false);
 
@@ -329,7 +331,7 @@ export default function DynamicPromptPage() {
     );
   }
 
-  const handleInputChange = (fieldName: string, value: any) => {
+  const handleInputChange = (fieldName: string, value: string | number) => {
     setFormData((prev) => ({
       ...prev,
       [fieldName]: value,
@@ -349,7 +351,9 @@ export default function DynamicPromptPage() {
   const generatePrompt = () => {
     let prompt = pageConfig.template;
     Object.entries(formData).forEach(([key, value]) => {
-      prompt = prompt.replace(`[${key}]`, value as string);
+      if (typeof value === "string") {
+        prompt = prompt.replace(`[${key}]`, value);
+      }
     });
     setGeneratedPrompt(prompt);
   };
