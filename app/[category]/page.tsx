@@ -25,66 +25,62 @@ const pageConfigs: Record<string, PageConfig> = {
   "content-creation": {
     title: "📝 Content Creation",
     description:
-      "Generate various content like blogs and social media posts with customizable tone and style.",
+      "Create blogs, social posts, and more with custom tone and style.",
     fields: [
       {
         name: "tone",
         type: "dropdown",
-        label: "Tone Palette",
+        label: "Tone",
         options: [
           "authoritative",
           "conversational",
           "inspirational",
           "analytical",
           "empathetic",
-          "provocative",
           "storytelling",
         ],
       },
       {
         name: "topic",
         type: "textbox",
-        label: "Core Concept",
+        label: "Topic",
       },
       {
         name: "audience",
         type: "dropdown",
-        label: "Audience Persona",
+        label: "Audience",
         options: [
-          "absolute beginners",
+          "beginners",
           "curious learners",
-          "industry professionals",
+          "professionals",
           "decision-makers",
-          "technical experts",
+          "experts",
           "skeptical readers",
-          "global perspectives",
         ],
       },
       {
         name: "format",
         type: "dropdown",
-        label: "Content Structure",
+        label: "Format",
         options: [
           "listicle",
           "narrative",
           "problem-solution",
           "case study",
           "expert breakdown",
-          "future-focused",
         ],
       },
     ],
-    template: `Craft a captivating [format] piece with a [tone] approach on the topic "[topic]" designed to resonate with [audience], beginning with an engaging hook to immediately draw attention. Weave in 3-5 thought-provoking insights that challenge common assumptions, paired with practical, actionable takeaways that the audience can apply right away. Address any potential skepticism head-on and guide the reader towards understanding with clarity and authority, avoiding overwhelming technical jargon. Conclude with a compelling call-to-action or reflection that leaves the audience thinking deeply about the subject, blending data-driven insights with relatable, human storytelling for maximum impact.`,
+    template: `Create a [format] piece with a [tone] tone about "[topic]" for [audience]. Begin with a strong hook, provide clear insights or tips, and end with a takeaway or call-to-action.\n\n[PASTE YOUR TEXT HERE]`,
   },
   "code-generation": {
     title: "🚀 Code Generation",
-    description:
-      "Create code snippets or complete programs in multiple languages for different tasks.",
+    description: "Generate code in any language for various tasks.",
     fields: [
       {
         name: "language",
         type: "dropdown",
-        label: "Programming Language",
+        label: "Language",
         options: [
           "Python",
           "JavaScript",
@@ -104,166 +100,104 @@ const pageConfigs: Record<string, PageConfig> = {
       {
         name: "task",
         type: "textarea",
-        label: "Problem Domain",
+        label: "Task",
       },
       {
         name: "complexity",
         type: "dropdown",
-        label: "Solution Sophistication",
-        options: [
-          "rapid prototype",
-          "production-ready",
-          "enterprise-grade",
-          "algorithmic breakthrough",
-        ],
+        label: "Complexity",
+        options: ["prototype", "production-ready", "enterprise-grade"],
       },
       {
         name: "paradigm",
         type: "dropdown",
-        label: "Design Philosophy",
-        options: ["functional", "object-oriented", "reactive", "declarative"],
+        label: "Paradigm",
+        options: ["functional", "object-oriented", "reactive"],
       },
     ],
-    template: `Generate a [complexity] solution in [language] addressing [task], applying the [paradigm] programming paradigm. Structure the solution with a modular, testable architecture, integrating defensive programming techniques to ensure robustness. Optimize for performance, readability, and future extensibility, ensuring that the code is clean, self-documenting, and includes thorough error handling with graceful degradation. Add inline comments to clarify non-obvious implementation decisions, and identify potential performance bottlenecks along with optimization strategies. As a bonus challenge, design the solution to not only solve the current task but also consider potential future requirements and scalability, preparing the codebase for growth.`,
-  },
-  learning: {
-    title: "📚 Learning & Summarization",
-    description:
-      "Get summaries and explanations on any topic for better understanding and faster learning.",
-    fields: [
-      {
-        name: "topic",
-        type: "textbox",
-        label: "Intellectual Frontier",
-      },
-      {
-        name: "depth",
-        type: "dropdown",
-        label: "Intellectual Approach",
-        options: [
-          "strategic overview",
-          "academic deep-dive",
-          "interdisciplinary connections",
-          "future implications",
-        ],
-      },
-      {
-        name: "audience",
-        type: "dropdown",
-        label: "Cognitive Landscape",
-        options: [
-          "curious newcomers",
-          "domain practitioners",
-          "cross-disciplinary thinkers",
-          "strategic leaders",
-        ],
-      },
-    ],
-    template: `Synthesize a profound [depth] exploration of "[topic]" calibrated for [audience], breaking down complex concepts into interconnected, easily digestible insights. Unveil counterintuitive perspectives and uncover hidden relationships, connecting theoretical frameworks with practical, real-world applications. Offer a meta-level understanding that transcends superficial information, incorporating historical context and future trajectories. Highlight pivotal moments, paradigm shifts, and breakthrough concepts, weaving a narrative that makes abstract ideas not only accessible but profoundly compelling and relevant to the audience.`,
-  },
-  brainstorming: {
-    title: "💡 Brainstorming & Ideation",
-    description:
-      "Generate creative ideas and solutions for various projects, products, and problems.",
-    fields: [
-      {
-        name: "problem",
-        type: "textbox",
-        label: "Challenge Landscape",
-      },
-      {
-        name: "approach",
-        type: "dropdown",
-        label: "Innovation Spectrum",
-        options: [
-          "exponential thinking",
-          "first-principles",
-          "cross-industry fusion",
-          "user-centric design",
-          "systemic disruption",
-          "emergent technology",
-        ],
-      },
-      {
-        name: "constraints",
-        type: "dropdown",
-        label: "Resource Context",
-        options: [
-          "minimal resources",
-          "maximum scalability",
-          "rapid iteration",
-          "long-term transformation",
-        ],
-      },
-    ],
-    template: `Architect transformative solutions for "[problem]" using the [approach] methodology within the [constraints] framework, generating five solution archetypes that radically reframe the problem. Provide a spectrum of approaches, from incremental improvements to revolutionary shifts. Deconstruct conventional thinking patterns and map out potential cascading impacts and systemic implications of each solution. Include a speculative "future state" scenario that demonstrates the long-term potential of the solutions, evaluating each approach against feasibility, potential disruption, resource efficiency, and scalability. Through a breakthrough lens, go beyond traditional solutions to identify paradigm-shifting perspectives that fundamentally transform the approach to the challenge.`,
+    template: `Write a [complexity] [language] solution for [task] using the [paradigm] paradigm. Ensure the code is clean, modular, and handles errors properly.\n\n[PASTE YOUR TEXT HERE]`,
   },
   writing: {
     title: "✍️ Writing Assistance",
-    description:
-      "Get help with writing emails, resumes, articles, and creative pieces.",
+    description: "Get help with emails, resumes, and creative writing.",
     fields: [
       {
         name: "type",
         type: "dropdown",
-        label: "Communication Modality",
-        options: [
-          "strategic proposal",
-          "narrative report",
-          "persuasive pitch",
-          "thought leadership",
-          "emotional storytelling",
-          "technical white paper",
-        ],
+        label: "Type",
+        options: ["email", "resume", "article", "story"],
       },
       {
         name: "tone",
         type: "dropdown",
-        label: "Psychological Approach",
-        options: [
-          "authoritative",
-          "empathetic",
-          "provocative",
-          "collaborative",
-          "visionary",
-          "data-driven",
-        ],
+        label: "Tone",
+        options: ["formal", "friendly", "persuasive"],
       },
       {
         name: "goal",
         type: "dropdown",
-        label: "Cognitive Outcome",
-        options: [
-          "paradigm shift",
-          "emotional resonance",
-          "strategic alignment",
-          "urgent action",
-          "deep understanding",
-        ],
+        label: "Goal",
+        options: ["inform", "persuade", "inspire"],
+      },
+    ],
+    template: `Write a [type] with a [tone] tone to [goal]. Keep the message clear, concise, and engaging.\n\n[PASTE YOUR TEXT HERE]`,
+  },
+  learning: {
+    title: "📚 Learning & Summarization",
+    description: "Summarize or explain topics for quick understanding.",
+    fields: [
+      {
+        name: "topic",
+        type: "textbox",
+        label: "Topic",
+      },
+      {
+        name: "depth",
+        type: "dropdown",
+        label: "Depth",
+        options: ["overview", "detailed explanation", "practical examples"],
       },
       {
         name: "audience",
         type: "dropdown",
-        label: "Psychological Persona",
-        options: [
-          "analytical decision-makers",
-          "emotional influencers",
-          "skeptical experts",
-          "visionary leaders",
-        ],
+        label: "Audience",
+        options: ["beginners", "students", "professionals", "leaders"],
       },
     ],
-    template: `Transform communication into a [type] masterpiece with [tone] precision, targeting [audience] to achieve [goal] by constructing a multi-layered communication strategy that integrates both rational and emotional persuasion techniques. Create a seamless narrative flow that anticipates and overcomes audience resistance, starting with a pattern-interrupting hook to immediately capture attention. Build credibility through strategic storytelling, using cognitive triggers to bypass typical defense mechanisms, and embedding subtle yet powerful psychological nudges throughout. Conclude with a transformative call-to-action that compels the audience to act. Craft each sentence to inform, engage, and subtly influence the specific psychological profile of the target audience, ensuring that the message resonates deeply and drives meaningful action.`,
+    template: `Summarize "[topic]" with a [depth] approach for [audience]. Make it easy to understand and include key points.\n\n[PASTE YOUR TEXT HERE]`,
+  },
+  brainstorming: {
+    title: "💡 Brainstorming & Ideation",
+    description: "Come up with ideas or solutions for your challenges.",
+    fields: [
+      {
+        name: "problem",
+        type: "textbox",
+        label: "Problem",
+      },
+      {
+        name: "approach",
+        type: "dropdown",
+        label: "Approach",
+        options: ["creative", "logical", "user-focused", "innovative"],
+      },
+      {
+        name: "constraints",
+        type: "dropdown",
+        label: "Constraints",
+        options: ["low budget", "fast delivery", "scalable solutions"],
+      },
+    ],
+    template: `Suggest 3-5 ideas for solving "[problem]" using a [approach] approach under [constraints]. Each idea should be practical and unique.\n\n[PASTE YOUR TEXT HERE]`,
   },
   debugging: {
     title: "🐛 Debugging & Optimization",
-    description:
-      "Analyze and optimize code, finding and fixing bugs to improve performance.",
+    description: "Fix bugs and optimize your code for better performance.",
     fields: [
       {
         name: "language",
         type: "dropdown",
-        label: "Programming Language",
+        label: "Language",
         options: [
           "Python",
           "JavaScript",
@@ -283,27 +217,17 @@ const pageConfigs: Record<string, PageConfig> = {
       {
         name: "focus",
         type: "dropdown",
-        label: "Optimization Dimension",
-        options: [
-          "algorithmic efficiency",
-          "system resilience",
-          "architectural refactoring",
-          "cognitive readability",
-          "performance scaling",
-        ],
+        label: "Focus",
+        options: ["bug fixing", "performance", "code structure"],
       },
       {
         name: "complexity",
         type: "dropdown",
-        label: "Intervention Level",
-        options: [
-          "surgical precision",
-          "systemic redesign",
-          "incremental improvement",
-        ],
+        label: "Complexity",
+        options: ["simple issues", "moderate changes", "major overhaul"],
       },
     ],
-    template: `Perform a comprehensive [complexity] optimization for code, focusing on [focus] within the [language] ecosystem by conducting a multi-dimensional code health assessment that goes beyond surface-level issues to uncover underlying architectural limitations. Propose solutions that not only address immediate concerns but also lay the foundation for long-term improvement. Deconstruct the current implementation’s architectural patterns, highlighting potential failure modes and performance bottlenecks, and provide a staged refactoring roadmap. Offer alternative implementation strategies, including performance benchmarks and comparative analysis to demonstrate improvements. Transform the code from a mere functional solution into an elegantly efficient, future-ready system, anticipating scaling challenges and optimizing for future extensibility.`,
+    template: `Analyze the code in [language] to focus on [focus] with a [complexity] approach. Provide clear fixes or optimizations.\n\n[PASTE YOUR CODE HERE]`,
   },
 };
 
