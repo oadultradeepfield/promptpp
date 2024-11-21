@@ -71,7 +71,7 @@ const pageConfigs: Record<string, PageConfig> = {
         ],
       },
     ],
-    template: `Create a [format] piece with a [tone] tone about "[topic]" for [audience]. Begin with a strong hook, provide clear insights or tips, and end with a takeaway or call-to-action.\n\n[PASTE YOUR TEXT HERE]`,
+    template: `Create a [format] in a [tone] tone, focusing on "[topic]" for [audience]. Start with a compelling hook that captures attention, deliver clear and actionable insights or tips in the main content, and conclude with a memorable takeaway or an engaging call-to-action that resonates with [audience].`,
   },
   "code-generation": {
     title: "🚀 Code Generation",
@@ -115,7 +115,7 @@ const pageConfigs: Record<string, PageConfig> = {
         options: ["functional", "object-oriented", "reactive"],
       },
     ],
-    template: `Write a [complexity] [language] solution for [task] using the [paradigm] paradigm. Ensure the code is clean, modular, and handles errors properly.\n\n[PASTE YOUR TEXT HERE]`,
+    template: `Write a [complexity] [language] solution for [task] following the [paradigm] paradigm. Ensure the code is clean, modular, and includes proper error handling. Provide concise comments to explain key sections of the code.`,
   },
   writing: {
     title: "✍️ Writing Assistance",
@@ -140,7 +140,7 @@ const pageConfigs: Record<string, PageConfig> = {
         options: ["inform", "persuade", "inspire"],
       },
     ],
-    template: `Write a [type] with a [tone] tone to [goal]. Keep the message clear, concise, and engaging.\n\n[PASTE YOUR TEXT HERE]`,
+    template: `Write a [type] in a [tone] tone to [goal]. Ensure the content is clear, concise, and engaging, with a focus on delivering value to the audience.\n\n[PASTE YOUR TEXT HERE]`,
   },
   learning: {
     title: "📚 Learning & Summarization",
@@ -164,7 +164,7 @@ const pageConfigs: Record<string, PageConfig> = {
         options: ["beginners", "students", "professionals", "leaders"],
       },
     ],
-    template: `Summarize "[topic]" with a [depth] approach for [audience]. Make it easy to understand and include key points.\n\n[PASTE YOUR TEXT HERE]`,
+    template: `Summarize "[topic]" using a [depth] approach tailored for [audience]. Present the information in an easy-to-understand manner, highlighting the most important key points clearly.\n\n[PASTE YOUR TEXT HERE AS NEEDED]`,
   },
   brainstorming: {
     title: "💡 Brainstorming & Ideation",
@@ -188,7 +188,7 @@ const pageConfigs: Record<string, PageConfig> = {
         options: ["low budget", "fast delivery", "scalable solutions"],
       },
     ],
-    template: `Suggest 3-5 ideas for solving "[problem]" using a [approach] approach under [constraints]. Each idea should be practical and unique.\n\n[PASTE YOUR TEXT HERE]`,
+    template: `Suggest 3-5 ideas for solving "[problem]" using a [approach] approach within [constraints]. Ensure each idea is practical, unique, and clearly outlined, with brief explanations of how they address the problem effectively.`,
   },
   debugging: {
     title: "🐛 Debugging & Optimization",
@@ -227,7 +227,7 @@ const pageConfigs: Record<string, PageConfig> = {
         options: ["simple issues", "moderate changes", "major overhaul"],
       },
     ],
-    template: `Analyze the code in [language] to focus on [focus] with a [complexity] approach. Provide clear fixes or optimizations.\n\n[PASTE YOUR CODE HERE]`,
+    template: `Analyze the given code in [language], focusing on [focus] with a [complexity] approach. Identify potential issues and provide clear fixes or optimizations, including explanations for each suggestion.\n\n[PASTE YOUR CODE HERE]`,
   },
 };
 
